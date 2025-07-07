@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>新增病人</title>
+</head>
+<body>
+  <h1>新增病人資料</h1> 
+
+
+  <form method="post">
+
+    <label>病人姓名：</label>
+    <input type="text" name="name" required><br>
+
+    <label>報告年度：</label>
+    <input type="number" name="report_year" required><br>
+
+    <label>病理報告數：</label>
+    <input type="number" name="pathology_count" value="0"><br>
+
+    <label>抽查報告數：</label>
+    <input type="number" name="audit_count" value="0"><br>
+
+    <label>其他報告數：</label>
+    <input type="number" name="other_count" value="0"><br>
+
+    <!-- 癌症類別選單（從後端傳來的 cancers 清單產生） -->
+    <label>癌症類別：</label>
+    <select name="cancer_type">
+      {% for c in cancers %}
+      <option value="{{c}}">{{c}}</option> <!-- 每一項癌症類別 -->
+      {% endfor %}
+    </select><br>
+
+    <!-- 醫院代碼選單（從後端傳來的 hospitals 清單產生） -->
+    <label>醫院代碼：</label>
+    <select name="hospital_code">
+      {% for h in hospitals %}
+      <option value="{{h}}">{{h}}</option> <!-- 每一間醫院代碼 -->
+      {% endfor %}
+    </select><br><br>
+
+    <button type="submit">送出</button>
+
+    <a href="{{ url_for('index') }}">
+      <button type="button">取消</button>
+    </a>
+
+  </form>
+</body>
+</html>

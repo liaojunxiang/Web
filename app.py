@@ -12,9 +12,9 @@ with app.app_context():
     db.create_all()  
     if not Patient.query.first(): #若空的就先放
         db.session.add_all([
-            Patient(name="挖哩勒", report_year=2020, pathology_count=9, cancer_type="乳癌", hospital_code="H001"),
-            Patient(name="哇啦啦", report_year=2021, pathology_count=8, cancer_type="大腸癌", hospital_code="H001"),
-            Patient(name="挖喔喔", report_year=2022, pathology_count=5, cancer_type="乳癌", hospital_code="H002"),
+            Patient(name="挖哩勒", report_year=2025, pathology_count=9, cancer_type="乳癌", hospital_code="H001"),
+            Patient(name="哇啦啦", report_year=2025, pathology_count=8, cancer_type="大腸癌", hospital_code="H001"),
+            Patient(name="挖喔喔", report_year=2025, pathology_count=5, cancer_type="乳癌", hospital_code="H002"),
         ])
         db.session.commit()
 
